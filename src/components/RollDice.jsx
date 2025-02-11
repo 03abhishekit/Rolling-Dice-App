@@ -1,13 +1,16 @@
 
 import React, { useState } from 'react'; 
 
-import Die from './Die'; 
+import Die from './Die';
+import './RollDice.css' 
+import { useNavigate } from "react-router-dom";
 
 const RollDice = ({ sides }) => {
     const [die1, setDie1] = useState('one'); 
     const [die2, setDie2] = useState('two'); 
     const [rolling, setRolling] = useState(false); 
     const[score, setScore] = useState(0);
+    const navigate = useNavigate();
 
     const roll = () => { 
         setTimeout(() => { 
@@ -24,6 +27,7 @@ const RollDice = ({ sides }) => {
                 setRolling(false); 
             }, 2000); 
         }, 2000);
+        
     };
 
     return ( 
